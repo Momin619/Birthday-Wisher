@@ -269,8 +269,7 @@ const App = (() => {
     document.getElementById("heroAge").textContent =
       `Turning ${state.age} today — this moment is yours.`;
     document.getElementById("revealMsg").textContent =
-      `"${state.name}, may this year carry you gently toward everything ` +
-      `you've ever wanted. You deserve every beautiful thing that finds its way to you."`;
+      `"${state.name}, Wishing you a joyful birthday and a year ahead filled with good health, lasting happiness, progress, and remarkable success, where every moment brings you closer to your dreams and the life you strive for."`;
   }
 
   /* ─ BUILD CANDLES ─ */
