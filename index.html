@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./index.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Moment ✦</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="ambient" id="ambient"></div>
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- ════════ ONBOARDING ════════ -->
+    <div class="screen" id="onboarding">
+      <div class="entry-card">
+        <h1 class="entry-heading">
+          A celebration<br />made <em>entirely</em> for you.
+        </h1>
+        <p class="entry-sub">Enter your details and let the moment begin.</p>
+
+        <div class="field">
+          <label class="field-label" for="f-name">Full Name</label>
+          <input
+            class="field-input"
+            id="f-name"
+            type="text"
+            placeholder="Your name"
+            maxlength="32"
+            autocomplete="off"
+          />
+          <div class="field-err" id="e-name">Name is required</div>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="f-age">Age</label>
+          <input
+            class="field-input"
+            id="f-age"
+            type="number"
+            placeholder="e.g. 28"
+            min="1"
+            max="120"
+          />
+          <div class="field-err" id="e-age">
+            Please enter a valid age (1–120)
+          </div>
+        </div>
+
+        <button class="btn-begin" id="btnBegin">
+          Begin Your Moment &nbsp;→
+        </button>
+      </div>
+    </div>
+
+    <!-- ════════ BIRTHDAY ════════ -->
+    <div id="birthday">
+      <div class="hero">
+        <div class="hero-eyebrow"><span></span>Happy Birthday<span></span></div>
+        <h1 class="hero-name"><span class="accent" id="heroName">—</span></h1>
+        <p class="hero-age" id="heroAge">—</p>
+      </div>
+
+      <div class="hr-thin"></div>
+
+      <div class="cake-scene" id="cakeScene">
+        <!-- Cake -->
+        <div class="cake-wrap" id="cakeWrap">
+          <!-- Candles row -->
+          <div class="candles" id="candleRow"></div>
+
+          <!-- Tier A -->
+          <div class="tier tier-a">
+            <div class="frosting frost-a"></div>
+            <div class="drip" style="left: 18px; background: #b07ec8"></div>
+            <div
+              class="drip"
+              style="left: 64px; height: 12px; background: #b07ec8"
+            ></div>
+            <div class="drip" style="right: 24px; background: #b07ec8"></div>
+            <div class="tier-line">
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+            </div>
+          </div>
+
+          <!-- Tier B -->
+          <div class="tier tier-b">
+            <div class="frosting frost-b"></div>
+            <div class="drip" style="left: 22px; background: #7aaa91"></div>
+            <div
+              class="drip"
+              style="left: 80px; height: 11px; background: #7aaa91"
+            ></div>
+            <div class="drip" style="right: 30px; background: #7aaa91"></div>
+            <div
+              class="drip"
+              style="right: 88px; height: 13px; background: #7aaa91"
+            ></div>
+            <div class="tier-line">
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+            </div>
+          </div>
+
+          <!-- Tier C -->
+          <div class="tier tier-c">
+            <div class="frosting frost-c"></div>
+            <div class="drip" style="left: 20px; background: #c9a96e"></div>
+            <div
+              class="drip"
+              style="left: 78px; height: 14px; background: #c9a96e"
+            ></div>
+            <div class="drip" style="left: 148px; background: #c9a96e"></div>
+            <div class="drip" style="right: 22px; background: #c9a96e"></div>
+            <div
+              class="drip"
+              style="right: 90px; height: 11px; background: #c9a96e"
+            ></div>
+            <div class="tier-line">
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+              <div class="tier-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <div class="cake-hint" id="cakeHint">
+            A quiet moment before the celebration.
+          </div>
+          <div class="btn-row">
+            <button
+              class="btn-ck gold"
+              id="btnLight"
+              onclick="App.lightCandles()"
+            >
+              Light Candles
+            </button>
+            <button
+              class="btn-ck"
+              id="btnBlow"
+              onclick="App.blowCandles()"
+              style="display: none"
+            >
+              Blow &nbsp;&amp;&nbsp; Wish
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Surprise reveal -->
+      <div class="reveal-section" id="revealSection">
+        <div class="reveal-card">
+          <p class="reveal-msg" id="revealMsg">—</p>
+        </div>
+      </div>
+
+      <div class="footer-reset">
+        <button class="reset-btn" onclick="App.reset()">
+          ↺ &nbsp; Start a New Celebration
+        </button>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
