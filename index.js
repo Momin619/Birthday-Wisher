@@ -199,47 +199,6 @@ const App = (() => {
     }
   }
   /* ─ VALIDATE & SUBMIT ─ */
-  function handleSubmit() {
-    const name = document.getElementById("f-name").value.trim();
-    const age = parseInt(document.getElementById("f-age").value);
-    const inN = document.getElementById("f-name");
-    const inA = document.getElementById("f-age");
-    const eN = document.getElementById("e-name");
-    const eA = document.getElementById("e-age");
-    let ok = true;
-
-    if (!name) {
-      inN.classList.add("err");
-      eN.classList.add("show");
-      ok = false;
-    } else {
-      inN.classList.remove("err");
-      eN.classList.remove("show");
-    }
-
-    if (!age || age < 1 || age > 120) {
-      inA.classList.add("err");
-      eA.classList.add("show");
-      ok = false;
-    } else {
-      inA.classList.remove("err");
-      eA.classList.remove("show");
-    }
-
-    if (!ok) return;
-
-    state.name = name;
-    state.age = age;
-    localStorage.setItem("birthday_name", name);
-    localStorage.setItem("birthday_age", age);
-
-    const ob = document.getElementById("onboarding");
-    ob.classList.add("exit");
-    setTimeout(() => {
-      ob.style.display = "none";
-      launch(false);
-    }, 820);
-  }
 
   /* ─ LAUNCH ─ */
   function launch(instant) {
@@ -378,8 +337,6 @@ const App = (() => {
 
   /* ─ RESET ─ */
   function reset() {
-    localStorage.removeItem("birthday_name");
-    localStorage.removeItem("birthday_age");
     location.reload();
   }
 
