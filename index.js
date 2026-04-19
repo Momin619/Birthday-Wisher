@@ -185,24 +185,19 @@ const App = (() => {
 
   /* ─ INIT ─ */
   function init() {
-    const n = localStorage.getItem("birthday_name");
-    const a = localStorage.getItem("birthday_age");
+    const params = new URLSearchParams(window.location.search);
+    const n = params.get("name");
+    const a = parseInt(params.get("age"));
+
     if (n && a) {
       state.name = n;
-      state.age = parseInt(a);
+      state.age = a;
       document.getElementById("onboarding").style.display = "none";
       launch(true);
+    } else {
+      document.getElementById("onboarding").style.display = "flex";
     }
-
-    document.getElementById("f-name").addEventListener("keydown", (e) => {
-      if (e.key === "Enter") document.getElementById("f-age").focus();
-    });
-    document.getElementById("f-age").addEventListener("keydown", (e) => {
-      if (e.key === "Enter") handleSubmit();
-    });
-    document.getElementById("btnBegin").addEventListener("click", handleSubmit);
   }
-
   /* ─ VALIDATE & SUBMIT ─ */
   function handleSubmit() {
     const name = document.getElementById("f-name").value.trim();

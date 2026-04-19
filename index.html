@@ -17,44 +17,18 @@
     <canvas id="confettiCanvas"></canvas>
 
     <!-- ════════ ONBOARDING ════════ -->
-    <div class="screen" id="onboarding">
-      <div class="entry-card">
-        <h1 class="entry-heading">
-          A celebration<br />designed <em>just</em> for you.
-        </h1>
-        <p class="entry-sub">Enter your details and begin the experience.</p>
-
-        <div class="field">
-          <label class="field-label" for="f-name">Full Name</label>
-          <input
-            class="field-input"
-            id="f-name"
-            type="text"
-            placeholder="Your name"
-            maxlength="32"
-            autocomplete="off"
-          />
-          <div class="field-err" id="e-name">Name is required</div>
-        </div>
-
-        <div class="field">
-          <label class="field-label" for="f-age">Age</label>
-          <input
-            class="field-input"
-            id="f-age"
-            type="number"
-            placeholder="e.g. 28"
-            min="1"
-            max="120"
-          />
-          <div class="field-err" id="e-age">
-            Please enter a valid age (1–120)
-          </div>
-        </div>
-
-        <button class="btn-begin" id="btnBegin">
-          Begin Your Moment &nbsp;→
-        </button>
+    <!-- ════════ ONBOARDING ════════ -->
+    <div class="screen" id="onboarding" style="display: none">
+      <div class="entry-card" style="text-align: center">
+        <h1 class="entry-heading">Missing <em>details</em></h1>
+        <p class="entry-sub">
+          Open this page with a URL like:<br /><br />
+          <code
+            style="color: var(--gold); font-size: 13px; letter-spacing: 0.04em"
+          >
+            ?name=Tallulah&amp;age=25
+          </code>
+        </p>
       </div>
     </div>
 
